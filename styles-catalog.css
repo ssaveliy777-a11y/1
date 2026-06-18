@@ -1,0 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; font-size: 2.5rem; }
+
+#search-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #3498db;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+#search-input:focus { border-color: #2980b9; box-shadow: 0 6px 10px rgba(52,152,219,.2); }
+
+.sort-controls { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+.sort-btn {
+  padding: 10px 20px;
+  background: #ecf0f1;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.sort-btn:hover { background: #3498db; color: white; }
+.sort-btn.active { background: #2980b9; color: white; }
+
+#doctors-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+
+.doctor-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #eaeaea;
+}
+.doctor-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.12); }
+.doctor-card h3 { color: #2c3e50; margin-bottom: 10px; font-size: 1.4rem; }
+.doctor-card p { margin-bottom: 8px; color: #555; }
+.doctor-card .price { font-weight: bold; color: #e74c3c; font-size: 1.1rem; }
+
+.no-results { text-align: center; padding: 40px; color: #7f8c8d; font-style: italic; }
+
+@media (max-width: 768px) {
+  .container { padding: 15px; }
+  h1 { font-size: 2rem; }
+  #doctors-list { grid-template-columns: 1fr; }
+}

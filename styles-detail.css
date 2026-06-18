@@ -1,0 +1,91 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.doctor-info {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  margin-bottom: 40px;
+}
+.doctor-info p { margin-bottom: 12px; font-size: 1.1rem; }
+.doctor-info strong { color: #2c3e50; }
+
+.gallery-section { margin-bottom: 40px; }
+.gallery-title { font-size: 1.5rem; color: #2c3e50; margin-bottom: 15px; }
+
+.thumb-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 3px solid transparent;
+}
+.thumb:hover, .thumb.active { border-color: #3498db; transform: scale(1.05); }
+
+.large-image-container { text-align: center; }
+.large-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.reviews-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+.reviews-title { font-size: 1.8rem; color: #2c3e50; margin-bottom: 20px; }
+
+.review {
+  padding: 15px;
+  border-left: 4px solid #3498db;
+  background: #f8f9fa;
+  margin-bottom: 15px;
+  border-radius: 0 8px 8px 0;
+}
+.review p { margin: 0; }
+.review strong { color: #2c3e50; }
+
+.add-review-section { margin-top: 30px; }
+#review-text {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 80px;
+  font-size: 1rem;
+}
+#add-review-btn {
+  margin-top: 10px;
+  padding: 12px 25px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#add-review-btn:hover { background: #2980b9; }
