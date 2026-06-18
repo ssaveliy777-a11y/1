@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Врачи медицинского центра</title>
+    <link rel="stylesheet" href="styles-catalog.css">
+</head>
+<body>
+    <h1>Наши врачи</h1>
+    <input type="text" id="search-input" placeholder="Поиск врача...">
+    <div id="doctors-list">
+        <div class="doctor-card" data-name="Иванов А.С." data-specialty="Терапевт" data-experience="10">
+            <h3>Иванов А.С.</h3>
+            <p><strong>Специальность:</strong> Терапевт</p>
+            <p><strong>Опыт:</strong> 10 лет</p>
+            <p>Консультация: 1500 руб.</p>
+        </div>
+        <div class="doctor-card" data-name="Петрова М.И." data-specialty="Кардиолог" data-experience="15">
+            <h3>Петрова М.И.</h3>
+            <p><strong>Специальность:</strong> Кардиолог</p>
+            <p><strong>Опыт:</strong> 15 лет</p>
+            <p>Консультация: 2000 руб.</p>
+        </div>
+        <div class="doctor-card" data-name="Сидоров В.П." data-specialty="Офтальмолог" data-experience="5">
+            <h3>Сидоров В.П.</h3>
+            <p><strong>Специальность:</strong> Офтальмолог</p>
+            <p><strong>Опыт:</strong> 5 лет</p>
+            <p>Консультация: 1800 руб.</p>
+        </div>
+    </div>
+    <script>
+    const doctors = document.querySelectorAll('.doctor-card');
+    const searchInput = document.getElementById('search-input');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        doctors.forEach(doctor => {
+            const name = doctor.dataset.name.toLowerCase();
+            const specialty = doctor.dataset.specialty.toLowerCase();
+            if (name.includes(query) || specialty.includes(query)) {
+                doctor.style.display = 'block';
+            } else {
+                doctor.style.display = 'none';
+            }
+        });
+    });
+
+    function sortDoctors(key) {
+        const sorted = Array.from(doctors).sort((a, b) => {
+            if (key === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+            if (key === 'experience') return parseInt(b.dataset.experience) - parseInt(a.dataset.experience);
+        });
+        const list = document.getElementById('doctors-list');
+        sorted.forEach(doctor => list.appendChild(doctor));
+    }
+    </script>
+</body>
+</html>

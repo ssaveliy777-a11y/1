@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Доктор Иванов А.С.</title>
+    <link rel="stylesheet" href="styles-detail.css">
+</head>
+<body>
+    <h1>Доктор Иванов А.С.</h1>
+    <p><strong>Специальность:</strong> Терапевт</p>
+    <p><strong>Опыт работы:</strong> 10 лет</p>
+    <p><strong>Стоимость консультации:</strong> 1500 руб.</p>
+
+    <h2>Галерея</h2>
+    <div>
+        <img src="https://via.placeholder.com/80?text=Фото+1" alt="Фото 1" class="thumb" onclick="showImage(this.src)">
+        <img src="https://via.placeholder.com/80?text=Фото+2" alt="Фото 2" class="thumb" onclick="showImage(this.src)">
+    </div>
+    <img id="large-image" class="large-image" src="https://via.placeholder.com/400?text=Основное+фото" alt="Большое фото">
+
+    <h2>Отзывы</h2>
+    <div id="reviews-list">
+        <div class="review">
+            <p><strong>Анна:</strong> Отличный врач, всё подробно объяснил.</p>
+        </div>
+        <div class="review">
+            <p><strong>Сергей:</strong> Очень внимательный специалист.</p>
+        </div>
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('large-image').src = src;
+        }
+    </script>
+</body>
+</html>
